@@ -1,0 +1,22 @@
+# General
+node_modules/
+dist/
+.env
+.yarn/cache
+.yarn/unplugged
+
+# Logs
+logs
+*.log
+
+# OS
+.DS_Store
+
+# Vite / React
+frontend/.vite
+
+# Build
+*.tsbuildinfo
+
+# VS Code
+.vscode/
