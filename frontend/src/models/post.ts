@@ -1,5 +1,7 @@
+import type { User } from "./user";
+
 export interface Post {
-  userId: number;
+  userId: User["id"];
   id: number;
   title: string;
   body: string;
