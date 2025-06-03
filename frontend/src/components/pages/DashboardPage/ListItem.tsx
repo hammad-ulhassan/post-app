@@ -13,6 +13,7 @@ const ListItem = ({ post }: ListItemProps) => {
                   <Image
                     width={120}
                     src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+                    preview={false}
                   />
                 }
                 title={<a href="https://ant.design">{post.title}</a>}

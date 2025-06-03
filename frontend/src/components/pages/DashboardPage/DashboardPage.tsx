@@ -6,13 +6,14 @@ import {
   List,
   Menu,
   Space,
+  Typography,
   type MenuProps,
 } from "antd";
 import { Content } from "antd/es/layout/layout";
 import { useState } from "react";
 import ListItem from "./ListItem";
 import { useGetUserPostsQuery } from "../../../services/user";
-import { SortAscendingOutlined } from "@ant-design/icons";
+import { SortAscendingOutlined, WechatWorkOutlined } from "@ant-design/icons";
 
 const items = [
   {
@@ -67,7 +68,13 @@ const DashboardPage = () => {
         align="flex-start"
         style={{ marginBottom: "1em" }}
       >
-        <div>sdfsdfs</div>
+        <Flex gap={10}>
+          <Button type="primary" icon={<WechatWorkOutlined style={{ fontSize: '150%'}}/>} size={"large"} />
+          <Flex vertical>
+            <Typography>All Blog Posts</Typography>
+            <Typography>Qatar Development Bank</Typography>
+          </Flex>
+        </Flex>
         <Dropdown menu={menuProps}>
           <Button>
             <Space>
