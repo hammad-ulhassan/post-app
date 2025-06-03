@@ -1,5 +1,5 @@
+import { User } from "../constants/endpoints";
 import type { Post } from "../models/post";
-import type { User } from "../models/user";
 import { getRandomInt } from "../utils";
 import { userApi } from "./baseQuery";
 
@@ -11,7 +11,7 @@ const getRandomUser = () => ({
 });
 
 const getUserPosts = () => ( {
-  url: `${randomUserId}/posts`,
+  url: `${randomUserId}/${User.POSTS}`,
   method: "GET",
 } )
 

@@ -1,3 +1,4 @@
 export enum User {
-    USERS = "users"
+    USERS = "users",
+    POSTS = "posts"
 }
