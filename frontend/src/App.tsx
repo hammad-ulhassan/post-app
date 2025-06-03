@@ -4,7 +4,7 @@ import { lazy, Suspense } from "react";
 import Loader from "./components/common/Loader";
 import { routes } from "./routing/routes";
 const MainLayout = lazy(() => import("./components/layout/MainLayout"));
-
+const DashboardPage = lazy(() => import("./components/pages/DashboardPage"));
 const PublicRoute = lazy(() => import("./routing/PublicRoute"));
 const SignInPage = lazy(() => import("./components/pages/SignInPage"));
 
@@ -19,7 +19,16 @@ function App() {
               <MainLayout />
             </Suspense>
           }
-        ></Route>
+        >
+          <Route
+            index
+            element={
+              <Suspense fallback={<Loader />}>
+                <DashboardPage />
+              </Suspense>
+            }
+          />
+        </Route>
         <Route
           element={
             <Suspense fallback={<Loader />}>
