@@ -15,13 +15,26 @@ const getUserPosts = () => ( {
   method: "GET",
 } )
 
+const getRandomImageUrl = (width = 400, height = 300) => {
+  const imageId = getRandomInt(1, 500);
+  return `https://picsum.photos/id/${imageId}/${width}/${height}`;
+};
+
+const transformPostsWithImages = (posts: Post[]): Post[] => {
+  return posts.map(post => ({
+    ...post,
+    imageUrl: getRandomImageUrl(400, 300)
+  }));
+};
+
 const mainUserApi = userApi.injectEndpoints({
   endpoints: (build) => ({
     getRandomUser: build.query<User, null>({
       query: getRandomUser,
     }),
     getUserPosts: build.query<Post[], null>( {
-      query: getUserPosts
+      query: getUserPosts,
+      transformResponse: (response: Post[]) => transformPostsWithImages(response)
     } )
   }),
   overrideExisting: false,
@@ -31,4 +44,3 @@ export const {
   useGetRandomUserQuery,
   useGetUserPostsQuery,
 } = mainUserApi;
-

@@ -5,3 +5,9 @@ Start this project by running:
 ```shell
 yarn dev
 ```
+`.env` is:
+```
+VITE_USER_AVATAR_URL=https://avatar.iran.liara.run/public/27
+VITE_USER_BASE_URL=https://jsonplaceholder.typicode.com/users
+VITE_POST_BASE_URL=https://jsonplaceholder.typicode.com/posts
+```

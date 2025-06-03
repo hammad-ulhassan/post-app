@@ -1,18 +1,21 @@
 import { Image, List, Typography } from "antd";
 import type { Post } from "../../../models/post";
+import { useEffect } from "react";
 
 interface ListItemProps {
   post: Post;
 }
 
 const ListItem = ({ post }: ListItemProps) => {
+  useEffect(() => {console.log(post)}, [post])
   return (
     <List.Item>
       <List.Item.Meta
         avatar={
           <Image
-            width={120}
-            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+            width={150}
+            height={100}
+            src={post.imageUrl}
             preview={false}
           />
         }

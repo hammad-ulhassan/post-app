@@ -10,7 +10,7 @@ import {
   type MenuProps,
 } from "antd";
 import { Content } from "antd/es/layout/layout";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ListItem from "./ListItem";
 import { useGetUserPostsQuery } from "../../../services/user";
 import { SortAscendingOutlined, WechatWorkOutlined } from "@ant-design/icons";
@@ -58,6 +58,10 @@ const DashboardPage = () => {
     isFetching: userPostsFetching,
   } = useGetUserPostsQuery(null);
 
+  useEffect(() => {
+    console.log(userPosts)
+  },[userPosts])
+
   const onClick: MenuProps["onClick"] = (e) => {
     setCurrent(e.key);
   };
@@ -102,6 +106,8 @@ const DashboardPage = () => {
                 console.log(page);
               },
               pageSize: 4,
+              position: "bottom",
+              align: "center"
             }}
           />
         </Content>
