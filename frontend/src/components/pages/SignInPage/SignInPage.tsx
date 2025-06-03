@@ -1,6 +1,6 @@
 import { Button, Card, Form, Input, Typography } from "antd";
 
-const LandingPage = () => {
+const SingInPage = () => {
   const onFinish = (values: unknown) => {
     console.log({ values });
   };
@@ -55,4 +55,4 @@ const LandingPage = () => {
     </div>
   );
 };
-export default LandingPage;
+export default SingInPage;

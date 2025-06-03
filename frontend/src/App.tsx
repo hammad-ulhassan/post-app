@@ -5,7 +5,7 @@ import Loader from "./components/common/Loader";
 import { routes } from "./routing/routes";
 
 const PublicRoute = lazy(() => import("./routing/PublicRoute"));
-const LandingPage = lazy(() => import("./components/pages/LandingPage"));
+const SignInPage = lazy(() => import("./components/pages/SignInPage"));
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
             path={routes.LANDING}
             element={
               <Suspense fallback={<Loader />}>
-                <LandingPage />
+                <SignInPage />
               </Suspense>
             }
           />
