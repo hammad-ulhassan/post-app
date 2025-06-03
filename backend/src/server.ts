@@ -29,7 +29,7 @@ app.use('/users', userRoutes);
 app.get('/', (req, res) => {
   res.json({
     success: true,
-    message: 'Blog Dashboard API Server',
+    message: 'post-app server',
     version: '1.0.0',
     endpoints: {
       health: '/health',
