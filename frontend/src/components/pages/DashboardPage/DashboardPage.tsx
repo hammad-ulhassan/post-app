@@ -65,14 +65,14 @@ const DashboardPage = () => {
     <>
       <Flex
         justify="space-between"
-        align="flex-start"
+        align="center"
         style={{ marginBottom: "1em" }}
       >
         <Flex gap={10}>
-          <Button type="primary" icon={<WechatWorkOutlined style={{ fontSize: '150%'}}/>} size={"large"} />
-          <Flex vertical>
-            <Typography>All Blog Posts</Typography>
-            <Typography>Qatar Development Bank</Typography>
+          <Button type="primary" style={{padding: "2rem"}} icon={<WechatWorkOutlined style={{ fontSize: '150%'}}/>} size={"large"} />
+          <Flex vertical justify="center">
+            <Typography.Title level={4} style={{margin: 0}}>All Blog Posts</Typography.Title>
+            <Typography.Text disabled>Qatar Development Bank</Typography.Text>
           </Flex>
         </Flex>
         <Dropdown menu={menuProps}>
