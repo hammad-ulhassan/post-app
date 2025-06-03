@@ -1,8 +1,12 @@
 import { Button, Card, Form, Input, Typography } from "antd";
+import { useDispatch } from "react-redux";
+import { setAuth } from "../../../redux/slices/auth";
 
 const SingInPage = () => {
-  const onFinish = (values: unknown) => {
-    console.log({ values });
+  const dispatch = useDispatch()
+
+  const onFinish = () => {
+    dispatch( setAuth( true ) )
   };
   return (
     <div
@@ -27,7 +31,7 @@ const SingInPage = () => {
             label="Email"
             name="email"
             rules={[
-              { required: true, message: "Please enter your email" },
+              { required: false, message: "Please enter your email" },
               { type: "email", message: "Enter a valid email" },
             ]}
           >
@@ -38,7 +42,7 @@ const SingInPage = () => {
             label="Password"
             name="password"
             rules={[
-              { required: true, message: "Please enter your password" },
+              { required: false, message: "Please enter your password" },
               { min: 6, message: "Password must be at least 6 characters" },
             ]}
           >
