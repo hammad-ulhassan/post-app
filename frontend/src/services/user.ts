@@ -1,4 +1,5 @@
 import { User } from "../constants/endpoints";
+import type { Response } from "../models/api";
 import type { Post } from "../models/post";
 import type { User as UserType } from "../models/user";
 import { getRandomInt } from "../utils";
@@ -21,21 +22,27 @@ const getRandomImageUrl = (width = 400, height = 300) => {
   return `https://picsum.photos/id/${imageId}/${width}/${height}`;
 };
 
-const transformPostsWithImages = (posts: Post[]): Post[] => {
-  return posts.map(post => ({
-    ...post,
-    imageUrl: getRandomImageUrl(400, 300)
-  }));
+const transformPostsWithImages = ( response: Response<Post[]> ): Post[] => {
+  if( response.success ) {
+    return response.data.map(post => ({
+      ...post,
+      imageUrl: getRandomImageUrl(400, 300)
+    }));
+  }
+  return [];
 };
 
 const mainUserApi = userApi.injectEndpoints({
   endpoints: (build) => ({
     getRandomUser: build.query<UserType, null>({
       query: getRandomUser,
+      transformResponse: ( res: Response<UserType> ) => {
+        return res.data
+      }
     }),
     getUserPosts: build.query<Post[], null>( {
       query: getUserPosts,
-      transformResponse: (response: Post[]) => transformPostsWithImages(response)
+      transformResponse: (response: Response<Post[]>) => transformPostsWithImages(response)
     } )
   }),
   overrideExisting: false,
