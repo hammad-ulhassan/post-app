@@ -3,6 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import userRoutes from './routes/userRoutes';
+import postRoutes from './routes/postRoutes';
 import { errorHandler, notFound, requestLogger } from './middleware';
 
 const app = express();
@@ -25,6 +26,7 @@ app.get('/health', (req, res) => {
 });
 
 app.use('/users', userRoutes);
+app.use('/posts', postRoutes);
 
 app.get('/', (req, res) => {
   res.json({
@@ -34,6 +36,8 @@ app.get('/', (req, res) => {
     endpoints: {
       health: '/health',
       users: '/users',
+      posts: '/posts',
+      postById: '/posts/:id',
       userById: '/users/:id',
       userPosts: '/users/:id/posts',
       updatePost: '/users/:userId/post/:postId'

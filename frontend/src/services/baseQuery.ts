@@ -10,3 +10,12 @@ export const userApi = createApi({
   }),
   endpoints: () => ({}),
 });
+
+export const postApi = createApi({
+  reducerPath: "posts",
+  tagTypes: [ "posts" ],
+  baseQuery: fetchBaseQuery({
+    baseUrl: environment.POST_BASE_URL,
+  }),
+  endpoints: () => ({}),
+})
