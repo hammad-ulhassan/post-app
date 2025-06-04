@@ -4,7 +4,8 @@ import colors from "./colors";
 const theme: ThemeConfig = {
     token: {
         colorPrimary: colors.primary,
-        colorBgLayout: colors.background
+        colorBgLayout: colors.background,
+        colorWhite: colors.white,
     }
 }
 

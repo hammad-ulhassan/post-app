@@ -1,13 +1,11 @@
 import { Image, List, Typography } from "antd";
 import type { Post } from "../../../models/post";
-import { useEffect } from "react";
 
 interface ListItemProps {
   post: Post;
 }
 
 const ListItem = ({ post }: ListItemProps) => {
-  useEffect(() => {console.log(post)}, [post])
   return (
     <List.Item>
       <List.Item.Meta

@@ -1,5 +1,6 @@
 import { User } from "../constants/endpoints";
 import type { Post } from "../models/post";
+import type { User as UserType } from "../models/user";
 import { getRandomInt } from "../utils";
 import { userApi } from "./baseQuery";
 
@@ -29,7 +30,7 @@ const transformPostsWithImages = (posts: Post[]): Post[] => {
 
 const mainUserApi = userApi.injectEndpoints({
   endpoints: (build) => ({
-    getRandomUser: build.query<User, null>({
+    getRandomUser: build.query<UserType, null>({
       query: getRandomUser,
     }),
     getUserPosts: build.query<Post[], null>( {
