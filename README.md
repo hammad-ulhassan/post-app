@@ -1,3 +1,9 @@
+# 🚨 LOGIN PAGE NOTICE
+
+> ⚠️ **When the frontend app starts, you will first see a login page. Just click the `Login` button to proceed — no email or password is required.**
+
+---
+
 # 🧩 Blog Dashboard – Full Stack Application
 
 A modern full-stack blog dashboard built with **React (Vite + TypeScript)** for the frontend and **Node.js + Express + TypeScript** for the backend.
@@ -9,7 +15,7 @@ A modern full-stack blog dashboard built with **React (Vite + TypeScript)** for 
 ```
 .
 ├── backend/        # Node.js Express API (TypeScript)
-├── frontend/       # React App (Vite + TS + Ant Design)
+├── frontend/       # React App (Vite + TS + Tailwind + Ant Design)
 ├── README.md       # Root project README
 ```
 
@@ -31,8 +37,8 @@ This project includes **two separate applications** (frontend and backend) that 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/hammad-ulhassan/post-app
-cd post-app
+git clone https://github.com/your-username/blog-dashboard.git
+cd blog-dashboard
 ```
 
 ### 2. Start the Backend
