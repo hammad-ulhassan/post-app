@@ -6,7 +6,7 @@ A modern React application built with Vite, TypeScript, and Tailwind CSS.
 
 ```
 frontend/
-├── node_modules
+├── node_modules/
 ├── README.md
 ├── env
 ├── eslint.config.js
@@ -15,50 +15,24 @@ frontend/
 ├── public
 │   └── vite.svg
 ├── src
-│   ├── App.css
-│   ├── App.tsx
 │   ├── assets
 │   │   └── react.svg
 │   ├── components
-│   │   ├── common
-│   │   │   ├── Header.tsx
-│   │   │   ├── Loader.tsx
-│   │   │   └── UserSection.tsx
-│   │   ├── layout
-│   │   │   └── MainLayout
-│   │   │       ├── MainLayout.tsx
-│   │   │       └── index.ts
-│   │   └── pages
-│   │       ├── DashboardPage
-│   │       │   ├── DashboardPage.tsx
-│   │       │   ├── ListItem.tsx
-│   │       │   └── index.ts
-│   │       └── SignInPage
-│   │           ├── SignInPage.tsx
-│   │           └── index.ts
-│   ├── config
-│   │   └── env.ts
-│   ├── constants
-│   │   └── endpoints.ts
+│   │   ├── common/
+│   │   ├── layout/
+│   │   └── pages/
+│   ├── config/
+│   ├── constants/
 │   ├── index.css
 │   ├── main.tsx
-│   ├── models
-│   │   ├── post.ts
-│   │   └── user.ts
+│   ├── models/
 │   ├── redux
-│   │   ├── slices
-│   │   │   └── auth.ts
+│   │   ├── slices/
 │   │   └── store.ts
-│   ├── routing
-│   │   ├── PublicRoute.tsx
-│   │   └── routes.ts
-│   ├── services
-│   │   ├── baseQuery.ts
-│   │   └── user.ts
-│   ├── theme
-│   │   ├── colors.ts
-│   │   └── index.ts
-│   ├── utils
+│   ├── routing/
+│   ├── services/
+│   ├── theme/
+│   ├── utils/
 │   │   └── index.ts
 │   └── vite-env.d.ts
 ├── tsconfig.app.json
