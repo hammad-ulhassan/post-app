@@ -37,6 +37,14 @@ function App() {
               </Suspense>
             }
           />
+          <Route
+            path="post/:id/edit"
+            element={
+              <Suspense fallback={<Loader />}>
+                <PostPage edit={ true }/>
+              </Suspense>
+            }
+          />
         </Route>
         <Route
           element={

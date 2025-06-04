@@ -1,3 +1,5 @@
+import type { Response } from "../models/api";
+import type { Post } from "../models/post";
 import { postApi } from "./baseQuery";
 
 interface getPostParam {
@@ -12,11 +14,14 @@ const getPost = ({ postId }: getPostParam) => ({
 const mainPostApi = postApi.injectEndpoints({
     endpoints: (build) => { 
       return {
-        getPost: build.query({
+        getPost: build.query<Post, getPostParam>({
             query: getPost,
+            transformResponse: ( resp: Response<Post> ) => {
+              return resp.data
+            }
         })
     }},
-    overrideExisting: false,
+    overrideExisting: true,
 });
 
 export const {

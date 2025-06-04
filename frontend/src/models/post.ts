@@ -7,3 +7,8 @@ export interface Post {
   body: string;
   imageUrl: string;
 }
+
+export interface PostForm {
+  title: Post["title"];
+  body: Post["body"]
+}
