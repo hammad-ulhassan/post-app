@@ -93,7 +93,7 @@ const PostPage = ({ edit }: PostPageProps) => {
               render={({ field }) => (
                 <Input
                   {...field}
-                  placeholder="Enter post title"
+                  placeholder={post?.title || "Enter post title"}
                   status={errors.title ? "error" : ""}
                 />
               )}
@@ -118,7 +118,7 @@ const PostPage = ({ edit }: PostPageProps) => {
               render={({ field }) => (
                 <Input.TextArea
                   {...field}
-                  placeholder="Enter post body"
+                  placeholder={ post?.body || "Enter post body" }
                   rows={4}
                   status={errors.body ? "error" : ""}
                 />
